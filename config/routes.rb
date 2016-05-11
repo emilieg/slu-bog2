@@ -1,22 +1,35 @@
 Rails.application.routes.draw do
 
-  # get 'creatures/index'
+  # get 'tags/index'
+
+  # get 'tags/show'
+
+  get 'creatures' => 'creatures#index'
 
   # get 'creatures/new'
 
-  # get 'creatures/create'
+  post '/api/creatures/create' => 'api#create'
 
-  # get 'creatures/show'
+  # path to controller
+  get 'api/creatures/all' => 'api#all'
+
+  get 'api/creature/:id' => 'api#show'
 
   # get 'creatures/edit'
 
   # get 'creatures/update'
-
+ 
   # get 'creatures/destroy'
+
+  get 'api' => 'api#main'
 
   root 'home#index'
 
+
   resources :creatures
+  resources :tags
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

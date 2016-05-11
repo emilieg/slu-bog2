@@ -7,15 +7,16 @@
   <%= csrf_meta_tags %>
   <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<%= javascript_tag "window._token = '#{form_authenticity_token}'" %>
 </head>
 <body>
 
 <nav class = "navbar" role = "navigation">
 <div class="container-fluid">
   <ul>
-    <li class="active"><a href="/">Home</a></li>
-    <li class="active"><a href="/creatures">Creatures</a></li>
-    <li class="active"><a href="/creatures/new">Report a Creature</a></li>
+    <li class="active" id="home-btn">Home</li>
+    <li class="active" id="all-creatures">Creatures</li>
+    <li class="active" id="report-creatures">Report a Creature</li>
   </ul>
 </div>
 </nav>

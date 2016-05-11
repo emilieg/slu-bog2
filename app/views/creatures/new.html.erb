@@ -9,7 +9,9 @@
         <%= bootstrap_form_for @creature do |f| %>
         <%= f.text_field :name %>
         <%= f.text_area :description %>
-
+        <div>
+        <%= f.collection_check_boxes :tag_ids, @tags, :id, :name %>
+        </div>
         <%= f.submit "Submit" %>
         <% end %>
       </div>
