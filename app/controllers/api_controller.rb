@@ -6,8 +6,8 @@ class ApiController < ApplicationController
   end
 
   def all
-    @creatures = Creature.all
-    render :json => @creatures
+    @creatures = Creature.includes(:tags)
+    render :json => @creatures, :include => :tags
   end
   
   def show

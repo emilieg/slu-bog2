@@ -15,6 +15,10 @@ $('#creature-form').hide();
         contentSelection.html('');
         data.forEach(function(creature){
           contentSelection.append('<a href="/api/creature/' + creature.id + '" class="show-link"><h2>' + creature.name + '</h2></a>')
+          creature.tags.forEach(function(tag){
+            console.log(tag);
+            contentSelection.append('<p>' + tag.name+ '</p>');
+          })
         })
       }, 
       error: function(err){
@@ -49,7 +53,6 @@ $('#report-creatures').click(function(e){
 
   $('.new-form').submit(function(e){
     e.preventDefault();
-    alert("YO");
     var creatureName = $('#name').val();
     var description = $('#description').val();
 
